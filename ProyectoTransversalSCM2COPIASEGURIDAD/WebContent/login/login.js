@@ -1,3 +1,7 @@
+function playBg(){
+var video = document.getElementById("myVideo");
+video.play();
+}
 function login(){
 	var nombre = document.getElementById("userInput").value
 	var contraseña = document.getElementById("passwordInput").value

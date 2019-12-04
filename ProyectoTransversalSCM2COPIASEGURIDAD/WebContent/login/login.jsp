@@ -21,6 +21,12 @@
 <title>¡SCM2 RENT!</title>
 </head>
 <body>
+<div class="video-container">
+
+<!-- The video -->
+<video autoplay muted loop id="myVideo" >
+  <source src="../resourcesGlobal/tesla.mp4" type="video/mp4">
+</video>
       <div class="container card-deck">
         <section class="card">
             <header class="card-header">
@@ -100,6 +106,7 @@
         </section>
       </div> <!-- /form -->
       <script>
+      playBg();
       addEvent("formRegister")
       addEvent("formLogin")
       </script>
