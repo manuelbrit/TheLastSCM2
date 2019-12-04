@@ -28,6 +28,29 @@ public class AJAXCheckNombreController extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
+    
+    protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		// response.getWriter().append("Served at: ").append(request.getContextPath());
+		final String nombre = request.getParameter("comprobarNombre");
+		final String contraseña = request.getParameter("comprobarPassword");
+		
+		
+		// Pedir al modelo que nos consulte si existe este nombre 
+		// en la tabla empleados
+		Modelo m = new Modelo();
+		Boolean usuarios = m.setUsuario(nombre,contraseña);
+
+		
+		PrintWriter out = response.getWriter();
+		
+		if(usuarios == true) {
+			out.write("Registrado con exito");
+		} else {
+			out.write("Ya existe o ha ocurrido un error");
+		}
+			
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)

@@ -1,5 +1,3 @@
-<%@page import="java.util.List"%>
-<%@page import="java.util.Map"%>
 <%@page import="modelo.Modelo"%>
 <%@page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -41,38 +39,21 @@
                 <h1>Registrar</h1>
 
                 <form id="formRegister" action="/" method="post">
-                  <div class="top-row">
-                    <div class="field-wrap">
-                      <label>
-                        Nombre<span class="req">*</span>
-                      </label>
-                      <input type="text" required autocomplete="off" />
-                    </div>
-
-                    <div class="field-wrap">
-                      <label>
-                        Apellido<span class="req">*</span>
-                      </label>
-                      <input type="text"required autocomplete="off"/>
-                    </div>
-                  </div>
-
                   <div class="field-wrap">
                     <label>
-                      Correo Electronico<span class="req">*</span>
+                      Usuario<span class="req">*</span>
                     </label>
-                    <input type="email"required autocomplete="off"/>
+                    <input id="registerUser" type="text" required autocomplete="off"/>
                   </div>
 
                   <div class="field-wrap">
                     <label>
                       Contraseña<span class="req">*</span>
                     </label>
-                    <input type="password"required autocomplete="off"/>
-                  </div>
-
-                  <button type="submit" class="button button-block"/>Registrar</button>
+                    <input id="registerPass" type="password"required autocomplete="off"/>
+                  </div>        
                 </form>
+                 <button onclick="register()" class="button button-block">Registrar</button>
               </div>
 
             <div class="tab-pane fade show active" id="iniciar" role="tabpanel" aria-labelledby="iniciar-tab">
@@ -102,7 +83,7 @@
             </div>
 
           </div><!-- tab-content -->
-        </div>
+
         </section>
       </div> <!-- /form -->
       <script>

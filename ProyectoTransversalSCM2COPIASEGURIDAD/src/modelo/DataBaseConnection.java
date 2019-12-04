@@ -74,6 +74,23 @@ public class DataBaseConnection {
 		
 		return rs;
 	}
+	public Boolean setUsuario(String usuario, String contraseña) throws SQLException {
+		String query = "INSERT INTO usuarios (usuario,contrasena)" + " VALUES ('"+usuario+"','"+contraseña+"')";
+		Statement stmt;
+		Boolean response = false;
+		try {
+			conn = getConnection();
+			stmt = conn.createStatement();
+			stmt.executeUpdate(query);
+			response = true;
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			response = false;
+		}
+		
+		return response;
+	}
 	
 }
 

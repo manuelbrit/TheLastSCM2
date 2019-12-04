@@ -53,6 +53,32 @@ public class Modelo {
 	public void setUsuarios(List<Usuario> usuarios) {
 		this.usuarios = usuarios;
 	}
+	
+	public Boolean setUsuario(String usuario, String password) {
+		Boolean response = false;
+		DataBaseConnection db = new DataBaseConnection("root", "admin");
+		List<Usuario> listaUsuarios = getUsuarios();
+		
+		List<Usuario> usuarioFiltrado = null;
+		
+		usuarioFiltrado = listaUsuarios.stream()
+			.filter(e -> e.getUsuario().equals(usuario) && e.getContraseya().equals(password))
+			.collect(Collectors.toList());
+		if(usuarioFiltrado.size() == 0) {
+			try {
+				db.setUsuario(usuario, password);
+				response = true;
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				response = false;
+			}
+		} else {
+			response = false;
+		}
+		
+		return response;
+		
+	}
 
 
 	public ArrayList<Object> getCoches() {
