@@ -75,7 +75,7 @@ public class DataBaseConnection {
 		return rs;
 	}
 	public Boolean setUsuario(String usuario, String contraseña) throws SQLException {
-		String query = "INSERT INTO usuarios (usuario,contrasena)" + " VALUES ('"+usuario+"','"+contraseña+"')";
+		String query = "INSERT INTO usuarios (usuario,contraseya)" + " VALUES ('"+usuario+"','"+contraseña+"')";
 		Statement stmt;
 		Boolean response = false;
 		try {
